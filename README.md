@@ -19,11 +19,9 @@ $ npm install
 $ npm run dev
 
 # build for production and launch server
-$ yarn build
-$ yarn start
+$ npm run build
+$ yarn run start
 
-# generate static project
-$ yarn generate
 ```
 
 ## License
