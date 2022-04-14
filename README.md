@@ -11,7 +11,7 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ## Build Setup
 
-```
+```bash
 # install dependencies
 $ npm install
 
@@ -27,5 +27,5 @@ $ yarn generate
 ```
 
 ## License
-For open source projects, say how it is licensed.
+Free license.
 
