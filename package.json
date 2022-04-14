@@ -1,0 +1,35 @@
+{
+  "name": "realtime-coupon-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "core-js": "^3.15.1",
+    "nuxt": "^2.15.7",
+    "nuxt-i18n": "^6.27.0",
+    "vee-validate": "^3.4.14",
+    "vue-i18n": "^8.27.1",
+    "vue-qrcode-reader": "^3.0.6",
+    "webpack": "^4.46.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/pwa": "^3.3.5",
+    "@nuxtjs/tailwindcss": "^4.2.0",
+    "eslint": "^7.24.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.23.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-vue": "^7.20.0",
+    "node-sass": "^7.0.1",
+    "postcss": "^8.3.5",
+    "sass": "^1.32.8",
+    "sass-loader": "^10.1.1"
+  }
+}
