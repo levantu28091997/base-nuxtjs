@@ -3,7 +3,7 @@
         <div class="flex justify-between content-center mb-5">
             <AtomsBaseTitle :title="`Form Create Product`" />
         </div>
-        <product-form @onSubmit="onSubmit" :data="showProduct" ref="productFormRef" />
+        <ProductForm @onSubmit="onSubmit" :data="showProduct" ref="productFormRef" />
     </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="min-h-screen relative">
         <div class="container px-2 mx-auto">
             <div class="flex flex-row flex-wrap">
                 <AtomsBaseSidebar />

@@ -1,22 +1,27 @@
 export const state = () => ({
-    products : [],
-    product: []
+    products : null,
+    product: null
 })
 
 export const mutations = {
     SET_PRODUCTS(state, payload) {
-        state.products = payload
+        const arr = Object.keys(payload).map((item) => {
+            return item = {...payload[item], id: item}
+        })
+
+        state.products = arr
     },
     SET_PRODUCT(state, payload) {
         state.product = payload
-        state.products = {...state.products, [payload.name]:payload.data}
+        state.products.push({...payload.data, id:payload.name})
     },
     DEL_PRODUCT(state, payload) {
-        console.log(state.products);
-        if(state.products[payload]) {
-            delete state.products[payload]
-            console.log(state.products);
-            return state.products
+        const index = state.products.findIndex(object => {
+            return object.id === payload
+        });
+
+        if(index > -1) {
+            state.products.splice(index, 1)
         }
     }
 }
@@ -62,7 +67,6 @@ export const actions = {
         const res = await this.$repositories.product.delete(id)
         const {status, data} = res
         if( status === 200){
-            console.log(id);
             commit('DEL_PRODUCT', id)
         }else{
             // handle error

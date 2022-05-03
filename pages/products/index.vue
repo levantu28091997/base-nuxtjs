@@ -1,8 +1,8 @@
 <template>
     <div class="container mx-auto">
-        <page-header :path="dataPageInfo.path" :name="dataPageInfo.name" />
+        <PageHeader :path="dataPageInfo.path" :name="dataPageInfo.name" />
         <div class="bock-items mb-5">
-            <product-list :data="getAllProduct" @handerDelete="handerDelete" />
+            <ProductList :products="getAllProduct" @handerDelete="handerDelete" />
         </div>
     </div>
 </template>
