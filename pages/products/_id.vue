@@ -25,8 +25,8 @@ export default {
     methods: {
         onSubmit(val) {
             let productId = this.$route.params.id
-            if(productId && val){
-                this.$store.dispatch('products/updateProduct', { id:productId, data: val})
+            if(productId && val) {
+                this.$store.dispatch('products/updateProduct', { id:productId, data: val })
             }
         }
     },
