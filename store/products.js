@@ -30,47 +30,54 @@ export const actions = {
     async setProducts({commit}) {
         const res = await this.$repositories.product.all()
         const {status, data } = res
-        if( status === 200 && data){
-            commit('SET_PRODUCTS', data)
-        }else{
-            // handle error
+        if( status !== 200 || !data){
+            return
         }
+        commit('SET_PRODUCTS', data)
     },
     async setProduct({commit}, id) {
         const res = await this.$repositories.product.show(id)
         const {status, data } = res
-        if( status === 200 && data){
-            commit('SET_PRODUCT', data)
-        }else{
-            // handle error
+        if( status !== 200 || !data){
+            return
         }
+        commit('SET_PRODUCT', data)
     },
     async createProduct({commit}, payload) {
-        const res = await this.$repositories.product.create(payload)
-        const {status, data} = res
-        if( status === 200 && data){
-            commit('SET_PRODUCT', {name: data.name, data: payload})
-        }else{
-            // handle error
-        }
+        return new Promise((resolve, reject)=>{
+            this.$repositories.product.create(payload)
+            .then((res)=>{
+                commit('SET_PRODUCT', {name: res.data.name, data: payload})
+                resolve({success:true})
+            })
+            .catch((err)=>{
+                reject(err.response)
+            })
+        })
     },
     async updateProduct({commit}, payload) {
-        const res = await this.$repositories.product.update(payload.id, payload.data)
-        const {status, data} = res
-        if( status === 200 && data){
-            commit('SET_PRODUCT', data)
-        }else{
-            // handle error
-        }
+        return new Promise((resolve, reject)=>{
+            this.$repositories.product.update(payload.id, payload.data)
+            .then((res)=>{
+                commit('SET_PRODUCT', res.data)
+                resolve({success:true})
+            })
+            .catch((err)=>{
+                reject(err.response)
+            })
+        })
     },
     async deleteProduct({commit}, id) {
-        const res = await this.$repositories.product.delete(id)
-        const {status, data} = res
-        if( status === 200){
-            commit('DEL_PRODUCT', id)
-        }else{
-            // handle error
-        }
+        return new Promise((resolve, reject)=>{
+            this.$repositories.product.delete(id)
+            .then((res)=>{
+                commit('DEL_PRODUCT', id)
+                resolve({success:true})
+            })
+            .catch((err)=>{
+                reject(err.response)
+            })
+        })
     }
 }
 

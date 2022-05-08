@@ -25,9 +25,18 @@ export default {
     methods: {
         onSubmit(val) {
             let productId = this.$route.params.id
-            if(productId && val) {
-                this.$store.dispatch('products/updateProduct', { id:productId, data: val })
+            if(!productId || !val) {
+                return
             }
+
+            this.$store.dispatch('products/updateProduct', { id:productId, data: val })
+            .then((res)=>{
+                //TODO:hander notifications on UI
+            })
+            .catch((err)=>{
+                console.log(err);
+                //TODO:hander notifications on UI
+            })
         }
     },
     components: {

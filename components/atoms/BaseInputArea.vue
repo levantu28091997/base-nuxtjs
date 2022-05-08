@@ -6,6 +6,7 @@
         ref="inputRef"
         :value="value"
         @input="updateInput()"
+        @blur="updateInput()"
     />
 </template>
 

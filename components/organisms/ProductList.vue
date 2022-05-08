@@ -19,8 +19,8 @@
                 <td class="border-b border-slate-100 dark:border-slate-700 p-2 text-slate-500 dark:text-slate-400" v-text="item.description" />
                 <td class="border-b border-slate-100 dark:border-slate-700 p-2 text-slate-500 dark:text-slate-400">
                     <div class="flex">
-                        <div class="p-2 my-2 text-red-500" @click="handerDelete(item.id)">Delete</div>
-                        <Nuxt-link class="inline-block p-2 my-2 text-blue-500" :to="`/products/${item.id}`">Edit</Nuxt-link>
+                        <div class="p-2 my-2 text-red-500 cursor-pointer hover:text-red-300" @click="handerDelete(item.id)">Delete</div>
+                        <Nuxt-link class="inline-block p-2 my-2 text-blue-500 hover:text-blue-300" :to="`/products/${item.id}`">Edit</Nuxt-link>
                     </div>
                 </td>
             </tr>

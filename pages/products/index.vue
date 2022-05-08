@@ -36,6 +36,13 @@ export default {
             let text = "Are you sure you want to delete this item?";
             if (confirm(text) == true) {
                 this.$store.dispatch('products/deleteProduct', id)
+                .then((res)=>{
+                    //TODO:hander notifications on UI
+                })
+                .catch((err)=>{
+                    console.log(err);
+                    //TODO:hander notifications on UI
+                })
             }
         }
     },
