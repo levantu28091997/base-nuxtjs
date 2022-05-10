@@ -9,6 +9,20 @@ To make you more professional with Nuxtjs, here is a list of recommended next st
 
 Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
 
+## Recommend Version
+
+```bash
+# Nuxt
+$ version: 2
+
+# Npm
+$ version: 6.14
+
+# Node
+$ version: v14.18
+
+```
+
 ## Build Setup
 
 ```bash
