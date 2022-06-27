@@ -25,7 +25,6 @@ export default {
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
-        { src: '@/plugins/qr.js', mode: 'client' },
         { src: '~/plugins/repositories.js' },
         { src: '~/plugins/validator.js' }
     ],
@@ -37,7 +36,6 @@ export default {
     buildModules: [
         // https://go.nuxtjs.dev/tailwindcss
         '@nuxtjs/tailwindcss',
-        '@nuxtjs/pwa',
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
@@ -72,9 +70,6 @@ export default {
         baseURL : process.env.BASE_API_URL || 'https://nuxt-project-1bb29-default-rtdb.asia-southeast1.firebasedatabase.app/'
     },
 
-    pwa: {
-        
-    },
     // env
     env : {
         baseUrl : process.env.BASE_URL || 'http://localhost:3000',

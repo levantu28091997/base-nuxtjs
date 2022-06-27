@@ -1,8 +1,8 @@
 <template>
     <div class="container mx-auto">
-        <page-header :path="dataPageInfo.path" :name="dataPageInfo.name" />
+        <PageHeader :path="dataPageInfo.path" :name="dataPageInfo.name" />
         <div class="bock-items mb-5">
-            <product-list :data="getAllProduct" @handerDelete="handerDelete" />
+            <ProductList :products="getAllProduct" @handerDelete="handerDelete" />
         </div>
     </div>
 </template>
@@ -36,6 +36,13 @@ export default {
             let text = "Are you sure you want to delete this item?";
             if (confirm(text) == true) {
                 this.$store.dispatch('products/deleteProduct', id)
+                .then((res)=>{
+                    //TODO:hander notifications on UI
+                })
+                .catch((err)=>{
+                    console.log(err);
+                    //TODO:hander notifications on UI
+                })
             }
         }
     },

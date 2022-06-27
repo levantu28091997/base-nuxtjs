@@ -3,7 +3,7 @@
         <div class="flex justify-between content-center mb-5">
             <AtomsBaseTitle :title="`Form Create Product`" />
         </div>
-        <product-form @onSubmit="onSubmit" />
+        <ProductForm @onSubmit="onSubmit" />
     </div>
 </template>
 
@@ -15,10 +15,19 @@ export default {
     },
     methods: {
         onSubmit(val) {
-            if(val) {
-                this.$store.dispatch('products/createProduct', val)
-                return this.$router.push('/products')
+            if(!val){
+                return
             }
+
+            this.$store.dispatch('products/createProduct', val)
+            .then((res)=>{
+                return this.$router.push('/products')
+                //TODO:hander notifications on UI
+            })
+            .catch((err)=>{
+                console.log(err);
+                //TODO:hander notifications on UI
+            })
         }
     },
     components: {
